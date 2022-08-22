@@ -1,4 +1,4 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     public enum ChatChannel
     {
@@ -28,7 +28,7 @@
         CrossworldLinkshell7 = 23,
         CrossworldLinkshell8 = 24,
         NoviceNetwork = 25,
-        PvPTeam = 26
+        PvPTeam = 26   
     }
 
     public static class ChatChannelExtensions
@@ -86,11 +86,10 @@
                 case ChatChannel.PvPTeam:
                     return "/pvpteam";
             }
-
-            return string.Empty;
             
+            return string.Empty;
         }
-
+        
         public static string ToName(this ChatChannel chatChannel)
         {
             switch (chatChannel)

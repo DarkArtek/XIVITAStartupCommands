@@ -1,4 +1,4 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using Dalamud.Game;
     using Dalamud.Game.ClientState;
@@ -14,31 +14,31 @@
     /// </summary>
     public class Plugin : IDalamudPlugin
     {
-        private const string mainCommandName = "/xivita-start";
+        private const string mainCommandName = "/startup";
 
         private static Plugin _instance;
 
         [PluginService]
         public static DalamudPluginInterface PluginInterface { get; private set; }
-
+        
         [PluginService]
         public static CommandManager CommandManager { get; private set; }
-
+        
         [PluginService]
         public static ClientState ClientState { get; private set; }
-
+        
         [PluginService]
         public static Framework Framework { get; private set; }
-
+        
         [PluginService]
         public static ChatGui ChatGui { get; private set; }
-
+        
         [PluginService]
         public static GameGui GameGui { get; private set; }
-
+        
         [PluginService]
         public static SigScanner TargetModuleScanner { get; private set; }
-
+        
         private Configuration configuration = new Configuration();
         private GameClient gameClient;
         private StartupHandlers startupHandlers;
@@ -46,7 +46,6 @@
 
 
         #region Properties
-
         /// <summary>
         /// Plugin configuration.
         /// </summary>
@@ -55,7 +54,7 @@
             get { return Instance.configuration; }
         }
 
-
+        
 
         /// <summary>
         /// Game client utility functions.
@@ -78,13 +77,16 @@
         /// </summary>
         public static PluginUI UI
         {
-            get { return Instance.ui; }
+            get
+            {
+                return Instance.ui;
+            }
         }
 
         /// <summary>
         /// Name of the plugin.
         /// </summary>
-        public string Name => "XIVITA Startup Commands";
+        public string Name => "Startup Commands";
 
         /// <summary>
         /// Singleton instance access - use this instead of _instance.
@@ -100,7 +102,6 @@
                 return _instance;
             }
         }
-
         #endregion
 
 
@@ -118,10 +119,10 @@
         {
             CommandManager.RemoveHandler(mainCommandName);
             PluginInterface.UiBuilder.Draw -= this.ui.Draw;
-
+            
             ClientState.Login -= this.startupHandlers.OnLogin;
             ClientState.Logout -= this.startupHandlers.OnLogout;
-
+            
             this.ui.Dispose();
             this.startupHandlers.Dispose();
             //PluginInterface.Dispose();
@@ -131,23 +132,23 @@
         public Plugin()
         {
             _instance = this;
-
-
+            
+            
 
             if (PluginInterface != null)
-                this.configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
+                this.configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();    
             else
                 this.configuration = new Configuration();
-
+            
             this.configuration.Initialize(PluginInterface);
-
+            
             this.ui = new PluginUI();
-
+            
             this.startupHandlers = new StartupHandlers();
             this.gameClient = new GameClient();
 
             RegisterHooks();
-
+            
             if (ClientState.LocalPlayer != null)
                 Plugin.Configuration.SetCurrentCharacter(Plugin.ClientState.LocalPlayer.Name.ToString());
         }
@@ -171,10 +172,9 @@
             CommandManager.AddHandler(
                 mainCommandName,
                 new CommandInfo(OnCommand)
-                {
-                    HelpMessage =
-                        "Apre la finestra di condifurazione per permettere a XIVITA Startup Commands di eseguire comandi al login."
-                });
+                    { 
+                        HelpMessage = "Open configuration for Startup Commands to perform behaviors upon character login."
+                    });
         }
 
 
@@ -182,7 +182,7 @@
         {
             if (PluginInterface == null)
                 return;
-
+            
             RegisterCommandHooks();
             RegisterStartupHooks();
             RegisterUIHooks();
@@ -201,17 +201,17 @@
             PluginInterface.UiBuilder.Draw += this.ui.Draw;
             PluginInterface.UiBuilder.OpenConfigUi +=
                 () =>
-                {
-                    if (ClientState.LocalPlayer == null)
-                        return;
-
-                    if (Configuration.CurrentCharacter == null)
                     {
-                        Configuration.SetCurrentCharacter(ClientState.LocalPlayer.Name.ToString());
-                    }
+                        if (ClientState.LocalPlayer == null)
+                            return;
 
-                    this.ui.ConfigWindow.Show();
-                };
+                        if (Configuration.CurrentCharacter == null)
+                        {
+                            Configuration.SetCurrentCharacter(ClientState.LocalPlayer.Name.ToString());
+                        }
+                        
+                        this.ui.ConfigWindow.Show();
+                    };
         }
     }
 }

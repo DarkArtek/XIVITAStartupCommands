@@ -1,4 +1,4 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using System;
     using System.Numerics;
@@ -37,7 +37,7 @@
             | ImGuiWindowFlags.NoResize;
 
 
-        protected override string WindowTitle { get; } = "Configrazione XIVITA Startup Commands";
+        protected override string WindowTitle { get; } = "Configurazione XIVITA Custom Startup Commands";
         #endregion
 
 
@@ -70,7 +70,7 @@
             }
             if (ImGui.IsItemHovered())
             {
-                ImGui.SetTooltip("Esegui tutti i comandi adesso.");
+                ImGui.SetTooltip("Esegui tutte le azioni adesso.");
             }
         }
 
@@ -78,10 +78,10 @@
         private void DrawCustomCommands()
         {
             ImGui.Separator();
-            ImGui.Text("XIVITA Custom Startup Commands:");
+            ImGui.Text("Comandi di Startup Personalizzati:");
             if (ImGui.IsItemHovered())
             {
-                ImGui.SetTooltip("Comandi custom da usare nella chat al login.");
+                ImGui.SetTooltip("Comandi di chat personalizzati da eseguire al login.");
             }
             
             ImGui.SameLine();
@@ -91,7 +91,7 @@
             }
             if (ImGui.IsItemHovered())
             {
-                ImGui.SetTooltip("Aggiungi un nuovo comando custom.");
+                ImGui.SetTooltip("Aggiungi nuovo comando personalizzato.");
             }
 
             bool updated = false;
@@ -107,7 +107,7 @@
                 updated = ImGui.InputText($"###inputText_Command_{index}", ref currentChatCommand, 512);
 
                 ImGui.SameLine();
-                if (ImGui.Button($"Remove###button_Remove{index}"))
+                if (ImGui.Button($"Rimuovi###button_Remove{index}"))
                 {
                     commandToRemove = customCommand;
                 }
@@ -153,7 +153,7 @@
 
             if (ImGui.IsItemHovered())
             {
-                ImGui.SetTooltip("Canale chat in-game da usare al login. Usare None per disattivare.");
+                ImGui.SetTooltip("Canale di chat In-game da usare al login. Usare None per disabilitare.");
             }
         }
     }

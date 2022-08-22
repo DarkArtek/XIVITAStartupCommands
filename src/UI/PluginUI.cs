@@ -1,4 +1,4 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using ImGuiNET;
     using System;
@@ -8,13 +8,11 @@
         #region Properties
         public ConfigWindow ConfigWindow { get; } = new ConfigWindow();
         #endregion
-
-
+        
         public void Dispose()
         {
         }
-
-
+        
         public void Draw()
         {
             this.ConfigWindow.Draw();

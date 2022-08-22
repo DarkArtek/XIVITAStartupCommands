@@ -1,4 +1,4 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using System;
     using System.Collections.Generic;

@@ -1,7 +1,8 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using System.Numerics;
     using ImGuiNET;
+
 
     public abstract class UIWindow
     {
@@ -24,6 +25,7 @@
 
         #endregion
 
+
         protected abstract void OnDraw();
 
 
@@ -42,6 +44,7 @@
             }
             ImGui.End();
         }
+
 
         public virtual void Hide()
         {

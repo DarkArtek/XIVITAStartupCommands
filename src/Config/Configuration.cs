@@ -1,4 +1,4 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using Dalamud.Configuration;
     using Dalamud.Plugin;

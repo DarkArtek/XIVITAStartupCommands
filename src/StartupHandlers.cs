@@ -1,7 +1,6 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using System;
-
 
     public class StartupHandlers : IDisposable
     {
@@ -11,6 +10,7 @@
 
 
         #region Properties
+
         public bool ChatReady
         {
             get { return this.chatReady; }
@@ -18,7 +18,7 @@
             {
                 lock (this.waitingForChatLock)
                 {
-                    this.chatReady = value;    
+                    this.chatReady = value;
                 }
             }
         }
@@ -30,10 +30,11 @@
             {
                 lock (this.waitingForChatLock)
                 {
-                    this.waitingForChatThread = value;    
+                    this.waitingForChatThread = value;
                 }
             }
         }
+
         #endregion
 
 
@@ -60,15 +61,16 @@
 
             this.WaitingForChatThread = ThreadLoop.Start(
                 action: (threadLoop) =>
+                {
+                    if (Plugin.GameClient.GetChatVisible())
                     {
-                        if (Plugin.GameClient.GetChatVisible())
-                        {
-                            this.chatReady = true;
-                            OnChatReady();
-                            threadLoop.Stop();
-                            this.WaitingForChatThread = null;
-                        }
-                    }, interval: 250);
+                        this.chatReady = true;
+                        OnChatReady();
+                        threadLoop.Stop();
+                        this.WaitingForChatThread = null;
+                    }
+                },
+                interval: 250);
         }
 
 
@@ -87,9 +89,9 @@
         {
             if (!Plugin.Configuration.HasCommands)
                 return;
-            
-            Plugin.LogToChat($"Performing startup behaviors for {Plugin.Configuration.CurrentCharacter}.");
-            
+
+            Plugin.LogToChat($"Esecuzione delle azioni pianificate per {Plugin.Configuration.CurrentCharacter}.");
+
             Plugin.GameClient.ChangeChatChannel();
             RunCustomCommands();
         }

@@ -1,4 +1,4 @@
-﻿namespace StartupCommands
+namespace XIVITAStartupCommands
 {
     using System;
     using System.Runtime.InteropServices;
@@ -80,4 +80,6 @@
             }
         }
     }
+
+    
 }
