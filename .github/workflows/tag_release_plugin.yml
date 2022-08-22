@@ -44,8 +44,8 @@ jobs:
         working-directory: src/GoodFriend.Plugin
         run: |
           dotnet build --configuration Release --nologo -p:AssemblyVersion=${{ steps.tag_name.outputs.TAG }} -p:AssemblyInformationalVersion=${{ steps.tag_name }}
-          sha512sum bin/Release/GoodFriend/latest.zip  >> checksums.txt
-          sha512sum bin/Release/GoodFriend/GoodFriend.json >> checksums.txt
+          sha512sum bin/Release/XIVITAStartupCommands/latest.zip  >> checksums.txt
+          sha512sum bin/Release/XIVITAStartupCommands/XIVITAStartupCommands.json >> checksums.txt
           cat checksums.txt
       - name: Release
         uses: softprops/action-gh-release@v1
