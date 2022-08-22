@@ -81,3 +81,4 @@ fabric.properties
 *.cache
 *.editorconfig
 x64/**
+obj/

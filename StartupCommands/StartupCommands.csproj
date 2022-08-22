@@ -6,6 +6,8 @@
         <LangVersion>latest</LangVersion>
         <AssemblyName>XIVITAStartupCommands</AssemblyName>
         <RootNamespace>XIVITAStartupCommands</RootNamespace>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>x64</Platforms>
     </PropertyGroup>
 
     <PropertyGroup>
