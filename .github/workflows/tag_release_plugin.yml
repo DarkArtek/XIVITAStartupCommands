@@ -30,18 +30,18 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Restore Dependencies
-        working-directory: src/GoodFriend.Plugin
+        working-directory: XIVITAStartupCommands
         run: dotnet restore
 
       - name: Download Dalamud Library
-        working-directory: src/GoodFriend.Plugin
+        working-directory: XIVITAStartupCommands
         run: |
           export IsCI=true
           wget -O Dalamud.zip https://goatcorp.github.io/dalamud-distrib/latest.zip
           unzip -o -d Dalamud Dalamud.zip
       - name: Build Plugin
         shell: bash
-        working-directory: src/GoodFriend.Plugin
+        working-directory: XIVITAStartupCommands
         run: |
           dotnet build --configuration Release --nologo -p:AssemblyVersion=${{ steps.tag_name.outputs.TAG }} -p:AssemblyInformationalVersion=${{ steps.tag_name }}
           sha512sum bin/Release/XIVITAStartupCommands/latest.zip  >> checksums.txt
