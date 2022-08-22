@@ -78,3 +78,5 @@ fabric.properties
 
 /StartupCommands/bin/
 .idea/
+*.cache
+*.editorconfig
