@@ -28,11 +28,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-
-      - name: Restore Dependencies
-        working-directory: XIVITAStartupCommands
-        run: dotnet restore
-
+          
       - name: Download Dalamud Library
         working-directory: XIVITAStartupCommands
         run: |
