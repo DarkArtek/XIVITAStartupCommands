@@ -2,12 +2,17 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0-windows</TargetFramework>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Platforms>x64</Platforms>
+        <PlatformTarget>x64</PlatformTarget>
         <LangVersion>latest</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <AssemblyName>XIVITAStartupCommands</AssemblyName>
         <RootNamespace>XIVITAStartupCommands</RootNamespace>
-        <Configurations>Debug;Release</Configurations>
-        <Platforms>x64</Platforms>
+        <Version>1.1.0.4</Version>
+        <PackageProjectUrl>https://github.com/DarkArtek/XIVITAStartupCommands</PackageProjectUrl>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -46,14 +51,11 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <None Update="..\Data\XIVITAStartupCommands.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
         <Content Include="..\Data\XIVITAStartupCommands.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="..\.devcontainer\Dockerfile">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="..\.gitignore">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
