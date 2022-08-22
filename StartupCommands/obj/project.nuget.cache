@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "vlX8/o6rtApc0v38b56C147GjS6bo/3UhU4MyK3Fl6L3F1MCpIemDQR/APPGyDrchKayvUy88zaNbpNNDVm+iQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\darka\\RiderProjects\\StartupCommands\\StartupCommands\\StartupCommands.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darka\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\darka\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\darka\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\darka\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

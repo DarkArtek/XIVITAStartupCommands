@@ -1,0 +1,13 @@
+﻿{
+  "Author": "FFXIVITA",
+  "Name": "XIVITA Startup Commands",
+  "InternalName": "XIVITAStartupCommands",
+  "Description": "Esegue comandi testuali come emote e macro al login.",
+  "AssemblyVersion": "1.1.0.2",
+  "ImageUrls": [],
+  "ApplicableVersion": "any",
+  "Tags": ["startup", "login", "commands", "chat"],
+  "DalamudApiLevel": 6,
+  "Punchline": "Avete mai pensato di automatizzare il vostro post-login?",
+  "RepoUrl": "https://ffxivita.it"
+}
