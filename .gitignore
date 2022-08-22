@@ -80,3 +80,4 @@ fabric.properties
 .idea/
 *.cache
 *.editorconfig
+x64/**
