@@ -44,8 +44,8 @@ jobs:
         working-directory: StartupCommands
         run: |
           dotnet build --configuration Release --nologo -p:AssemblyVersion=${{ steps.tag_name.outputs.TAG }} -p:AssemblyInformationalVersion=${{ steps.tag_name }}
-          sha512sum bin/Release/StartupCommands/latest.zip  >> checksums.txt
-          sha512sum bin/Release/StartupCommands.json >> checksums.txt
+          sha512sum bin/x64/Release/StartupCommands/latest.zip  >> checksums.txt
+          sha512sum bin/x64/Release/XIVITAStartupCommands.json >> checksums.txt
           cat checksums.txt
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -53,5 +53,5 @@ jobs:
           generate_release_notes: true
           prerelease: false
           files: |
-            StartupCommands/bin/Release/StartupCommands/latest.zip
-            StartupCommands/bin/Release/StartupCommands/StartupCommands.json
+            StartupCommands/bin/x64/Release/StartupCommands/latest.zip
+            StartupCommands/bin/x64/Release/StartupCommands/XIVITAStartupCommands.json
