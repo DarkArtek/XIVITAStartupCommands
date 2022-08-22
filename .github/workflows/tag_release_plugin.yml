@@ -53,5 +53,5 @@ jobs:
           generate_release_notes: true
           prerelease: false
           files: |
-            src/GoodFriend.Plugin/bin/Release/XIVITAStartupCommands/latest.zip
-            src/GoodFriend.Plugin/bin/Release/XIVITAStartupCommands/XIVITAStartupCommands.json
+            src/XIVITAStartupCommands/bin/Release/XIVITAStartupCommands/latest.zip
+            src/XIVITAStartupCommands/bin/Release/XIVITAStartupCommands/XIVITAStartupCommands.json
