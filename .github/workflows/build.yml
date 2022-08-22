@@ -5,7 +5,7 @@ name: "Tag: Release"
 on:
   push:
     tags:
-      - "v*.*.*.*"
+      - "**"
 
 permissions:
   contents: write
