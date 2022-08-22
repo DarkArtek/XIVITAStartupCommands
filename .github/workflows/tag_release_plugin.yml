@@ -28,20 +28,24 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-          
+
+      - name: Restore Dependencies
+        working-directory: StartupCommands
+        run: dotnet restore
+
       - name: Download Dalamud Library
-        working-directory: XIVITAStartupCommands
+        working-directory: StartupCommands
         run: |
           export IsCI=true
           wget -O Dalamud.zip https://goatcorp.github.io/dalamud-distrib/latest.zip
           unzip -o -d Dalamud Dalamud.zip
       - name: Build Plugin
         shell: bash
-        working-directory: XIVITAStartupCommands
+        working-directory: StartupCommands
         run: |
           dotnet build --configuration Release --nologo -p:AssemblyVersion=${{ steps.tag_name.outputs.TAG }} -p:AssemblyInformationalVersion=${{ steps.tag_name }}
-          sha512sum bin/Release/XIVITAStartupCommands/latest.zip  >> checksums.txt
-          sha512sum bin/Release/XIVITAStartupCommands.json >> checksums.txt
+          sha512sum bin/Release/StartupCommands/latest.zip  >> checksums.txt
+          sha512sum bin/Release/StartupCommands.json >> checksums.txt
           cat checksums.txt
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -49,5 +53,5 @@ jobs:
           generate_release_notes: true
           prerelease: false
           files: |
-            XIVITAStartupCommands/bin/Release/XIVITAStartupCommands/latest.zip
-            XIVITAStartupCommands/bin/Release/XIVITAStartupCommands/XIVITAStartupCommands.json
+            StartupCommands/bin/Release/StartupCommands/latest.zip
+            StartupCommands/bin/Release/StartupCommands/XIVITAStartupCommands.json
