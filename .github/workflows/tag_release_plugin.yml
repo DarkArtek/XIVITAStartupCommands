@@ -54,4 +54,4 @@ jobs:
           prerelease: false
           files: |
             StartupCommands/bin/Release/StartupCommands/latest.zip
-            StartupCommands/bin/Release/StartupCommands/XIVITAStartupCommands.json
+            StartupCommands/bin/Release/StartupCommands/StartupCommands.json
