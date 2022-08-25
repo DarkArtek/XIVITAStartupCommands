@@ -83,3 +83,4 @@ fabric.properties
 x64/**
 obj/
 *.zip
+.ssh/
