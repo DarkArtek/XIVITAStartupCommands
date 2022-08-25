@@ -82,3 +82,4 @@ fabric.properties
 *.editorconfig
 x64/**
 obj/
+*.zip
