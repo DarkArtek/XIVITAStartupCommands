@@ -52,4 +52,7 @@
             <Private>False</Private>
         </Reference>
     </ItemGroup>
+    <ItemGroup>
+        <None Include="..\.editorconfig" Link=".editorconfig" />
+    </ItemGroup>
 </Project>
