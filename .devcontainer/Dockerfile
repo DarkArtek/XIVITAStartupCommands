@@ -10,4 +10,4 @@ RUN apk add --update openssh
 
 # Scarica il repository dentro /workspaces
 WORKDIR /workspaces 
-RUN git clone https://github.com/DarkArtek/StartupCommands.git
+RUN git clone git@github.com:DarkArtek/XIVITAStartupCommands.git
