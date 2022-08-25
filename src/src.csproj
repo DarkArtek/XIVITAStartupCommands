@@ -4,14 +4,15 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Platforms>x64</Platforms>
         <PlatformTarget>x64</PlatformTarget>
-        <LangVersion>latest</LangVersion>
+        <LangVersion>preview</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <AssemblyName>XIVITAStartupCommands</AssemblyName>
         <RootNamespace>XIVITAStartupCommands</RootNamespace>
-        <Version>1.1.0.5</Version>
+        <Version>1.1.0.6</Version>
         <PackageProjectUrl>https://github.com/DarkArtek/XIVITAStartupCommands</PackageProjectUrl>
     </PropertyGroup>
 
@@ -29,6 +30,7 @@
     </PropertyGroup>
     
     <ItemGroup>
+      <PackageReference Include="DalamudPackager" Version="2.1.8" />
       <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
     </ItemGroup>
 
@@ -50,16 +52,4 @@
             <Private>False</Private>
         </Reference>
     </ItemGroup>
-    <ItemGroup>
-        <None Update="..\Data\XIVITAStartupCommands.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <Content Include="..\Data\XIVITAStartupCommands.json">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="Properties" />
-    </ItemGroup>
-
 </Project>

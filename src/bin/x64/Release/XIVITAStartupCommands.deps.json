@@ -6,22 +6,31 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "XIVITAStartupCommands/1.1.0.5": {
+      "XIVITAStartupCommands/1.1.0.6": {
         "dependencies": {
+          "DalamudPackager": "2.1.8",
           "System.Numerics.Vectors": "4.5.0"
         },
         "runtime": {
           "XIVITAStartupCommands.dll": {}
         }
       },
+      "DalamudPackager/2.1.8": {},
       "System.Numerics.Vectors/4.5.0": {}
     }
   },
   "libraries": {
-    "XIVITAStartupCommands/1.1.0.5": {
+    "XIVITAStartupCommands/1.1.0.6": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DalamudPackager/2.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YqagNXs9InxmqkXzq7kLveImxnodkBEicAhydMXVp7dFjC7xb76U6zGgAax4/BWIWfZeWzr5DJyQSev31kj81A==",
+      "path": "dalamudpackager/2.1.8",
+      "hashPath": "dalamudpackager.2.1.8.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",
