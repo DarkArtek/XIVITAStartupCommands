@@ -30,7 +30,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-      <PackageReference Include="DalamudPackager" Version="2.1.8" />
+      <PackageReference Include="DalamudPackager" Version="2.1.13" />
       <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
     </ItemGroup>
 
